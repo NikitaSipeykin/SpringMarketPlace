@@ -13,8 +13,8 @@ public class ProductController {
   private final ProductService productService;
 
   @GetMapping("/")
-  public String products(Model model){
-    model.addAttribute("products", productService.getAllProducts());
+  public String products(@RequestParam(name = "title", required = false) String title, Model model){
+    model.addAttribute("products", productService.getAllProducts(title));
     return "products";
   }
 
@@ -24,8 +24,8 @@ public class ProductController {
     return "product-info";
   }
 
-  @PutMapping("/product/create")
-  public String createProduct(Product product){
+  @PostMapping("/product/create")
+  public String createProduct(@ModelAttribute Product product){
     productService.saveProduct(product);
     return "redirect:/";
   }
