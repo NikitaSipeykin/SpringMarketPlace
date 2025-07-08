@@ -18,3 +18,5 @@ spring:
             hibernate:
                 format_sql: true
                 default_schema: bysell
+    freemarker:
+        expose-request-attributes: true

@@ -4,7 +4,11 @@
     <title>BUYSELL</title>
 </head>
 <body>
-<h1>BUYSELL</h1><hr>
+<h1>BUYSELL | <a href="/login">Войти</a></h1><hr>
+<form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Выйти"/>
+</form>
 <h4>Товары со всей России</h4>
 <form action="/" method="get">
     Поиск по названию объявления: <input type="text" name="title"><br>
@@ -28,6 +32,7 @@
     Первая фотография: <input type="file" name="file1"/><br><br>
     Вторая фотография: <input type="file" name="file2"/><br><br>
     Третья фотография: <input type="file" name="file3"/><br><br>
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
     <input type="submit" value="Добавить товар"/>
 </form>
 </body>
