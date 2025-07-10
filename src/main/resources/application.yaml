@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: bysell
+    datasource:
+        url: jdbc:postgresql://localhost:5432/by_sell_db
+        username: postgres
+        password: postgres
+        driver-class-name: org.postgresql.Driver
+        hikari:
+            auto-commit: false
+    jpa:
+        hibernate:
+            ddl-auto: update
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                default_schema: bysell
+    freemarker:
+        expose-request-attributes: true
+
+    servlet:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 100MB
